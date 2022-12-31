@@ -56,7 +56,7 @@
 
 /* Style the back side */
 .flipCardBack {
-  background-color: dodgerblue;
-  color: white;
+  background-color: lavenderblush;
+  color: black;
   transform: rotateY(180deg);
 }
