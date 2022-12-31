@@ -1,5 +1,7 @@
 import Layout from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
+import getRandomInt from "../components/random";
+
 export default function English() {
   return (
     <Layout deutsch>
