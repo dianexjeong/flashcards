@@ -7,11 +7,10 @@ import getRandomInt from "./random";
 
 
 const Flashcard = () =>{
-  // const [num, setNum] = useState(getRandomInt());
-  // useEffect(() => {
-  //   const r = getRandomInt();
-  //   setNum(r)},[]);
-  const num=getRandomInt();
+  const [num, setNum] = useState(getRandomInt());
+  useEffect(() => {
+    const r = getRandomInt();
+    setNum(r)},[]);
 
   return (
     <>

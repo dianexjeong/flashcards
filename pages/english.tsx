@@ -7,7 +7,7 @@ export default function English() {
   return (
     <Layout>
       <h1 className={utilStyles.heading2Xl}>Let's study English!</h1>
-      <Flashcard/>
+      <Flashcard />
     </Layout>
   );
 }
