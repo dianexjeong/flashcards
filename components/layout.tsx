@@ -19,15 +19,28 @@ export default function Layout({
   deutsch?: boolean;
   air?: string;
 }) {
-  const airClass: string = `${
-    air === "좋음"
-      ? utilStyles.goodSign
-      : air === "보통"
-      ? utilStyles.normalSign
-      : air === "나쁨"
-      ? utilStyles.badSign
-      : utilStyles.veryBadSign
-  }`;
+  var airClass: string = "";
+  if (air === "좋음") {
+    airClass = `${utilStyles.goodSign}`;
+  } else if (air === "보통") {
+    airClass = `${utilStyles.normalSign}`;
+  } else if (air === "나쁨") {
+    airClass = `${utilStyles.badSign}`;
+  } else if (air === "매우나쁨") {
+    airClass = `${utilStyles.veryBadSign}`;
+  } else {
+    airClass = `${utilStyles.goodSign}`;
+  }
+
+  // const airClass: string = `${
+  //   air === "좋음"
+  //     ? utilStyles.goodSign
+  //     : air === "보통"
+  //     ? utilStyles.normalSign
+  //     : air === "나쁨"
+  //     ? utilStyles.badSign
+  //     : utilStyles.veryBadSign
+  // }`;
 
   return (
     <div className={styles.container}>
