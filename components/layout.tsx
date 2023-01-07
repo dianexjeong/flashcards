@@ -19,6 +19,16 @@ export default function Layout({
   deutsch?: boolean;
   air?: string;
 }) {
+  const airClass: string = `${
+    air === "좋음"
+      ? utilStyles.goodSign
+      : air === "보통"
+      ? utilStyles.normalSign
+      : air === "나쁨"
+      ? utilStyles.badSign
+      : utilStyles.veryBadSign
+  }`;
+
   return (
     <div className={styles.container}>
       <Head>
@@ -43,11 +53,11 @@ export default function Layout({
         ></link>
         {home ? (
           <>
-            <div className={utilStyles.sign}>{greet}</div>
+            <div className={airClass}>{greet}</div>
           </>
         ) : deutsch ? (
           <>
-            <div className={utilStyles.sign}>
+            <div className={airClass}>
               <Link href="/" className={utilStyles.colorInherit}>
                 {germanGreet}
               </Link>
@@ -55,7 +65,7 @@ export default function Layout({
           </>
         ) : (
           <>
-            <div className={utilStyles.sign}>
+            <div className={airClass}>
               <Link href="/" className={utilStyles.colorInherit}>
                 {greet}
               </Link>
