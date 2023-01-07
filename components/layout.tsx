@@ -35,53 +35,29 @@ export default function Layout({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Vibur"
+        ></link>
         {home ? (
           <>
-            <Image
-              priority
-              src="/images/profile.JPG"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={greet}
-            />
-            <h1 className={utilStyles.heading2Xl}>{greet}</h1>
+            <div className={utilStyles.sign}>{greet}</div>
           </>
         ) : deutsch ? (
           <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.JPG"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt={germanGreet}
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
+            <div className={utilStyles.sign}>
               <Link href="/" className={utilStyles.colorInherit}>
                 {germanGreet}
               </Link>
-            </h2>
+            </div>
           </>
         ) : (
           <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.JPG"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt={greet}
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
+            <div className={utilStyles.sign}>
               <Link href="/" className={utilStyles.colorInherit}>
                 {greet}
               </Link>
-            </h2>
+            </div>
           </>
         )}
       </header>
