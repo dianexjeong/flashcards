@@ -6,9 +6,9 @@ import axios from "axios";
 
 const API_KEY = process.env.AIR_API_KEY;
 
-export default function Home() {
+export default function Home({ airQuality }: { airQuality: string }) {
   return (
-    <Layout home>
+    <Layout home air={airQuality}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -26,8 +26,9 @@ export async function getServerSideProps() {
   const res = await axios.get(
     `http://openAPI.seoul.go.kr:8088/${API_KEY}/json/RealtimeCityAir/1/5/동남권/서초구`
   );
-  console.log(res.data.RealtimeCityAir.row[0].IDEX_NM);
+  const airQuality = res.data.RealtimeCityAir.row[0].IDEX_NM;
+
   return {
-    props: {},
+    props: { airQuality },
   };
 }

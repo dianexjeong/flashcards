@@ -12,10 +12,12 @@ export default function Layout({
   children,
   home,
   deutsch,
+  air,
 }: {
   children: React.ReactNode;
   home?: boolean;
   deutsch?: boolean;
+  air?: string;
 }) {
   return (
     <div className={styles.container}>
