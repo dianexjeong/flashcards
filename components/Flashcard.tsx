@@ -1,24 +1,12 @@
 import styles from "./layout.module.css";
-import { useState, useEffect } from "react";
-import englishKorean from "../words/englishKorean";
-import englishWords from "../words/englishWords";
-import getRandomInt from "./random";
-import words from "../pages/fetchWord";
 
-const Flashcard = () => {
-  const [num, setNum] = useState(getRandomInt());
-
-  useEffect(() => {
-    const r = getRandomInt();
-    setNum(r);
-  }, []);
-
+const Flashcard = ({ eng, kor }: { eng: string; kor: string }) => {
   return (
     <>
       <div className={styles.flipCard}>
         <div className={styles.flipCardInner}>
-          <div className={styles.flipCardFront}>{englishWords[num]}</div>
-          <div className={styles.flipCardBack}>{englishKorean[num]}</div>
+          <div className={styles.flipCardFront}>{eng}</div>
+          <div className={styles.flipCardBack}>{kor}</div>
         </div>
       </div>
     </>
