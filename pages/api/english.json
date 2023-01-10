@@ -1,0 +1,20 @@
+{
+  "englishWords": [
+    {
+      "id": 1,
+      "word": "abandon",
+      "def": "버리다"
+    },
+    {
+      "id": 2,
+      "word": "abate",
+      "def": "감소시키다"
+    },
+    {
+      "id": 3,
+      "word": "a view range of",
+      "def": "다양한"
+    }
+  ],
+  "germanWords": []
+}

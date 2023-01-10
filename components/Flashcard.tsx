@@ -3,14 +3,15 @@ import { useState, useEffect } from "react";
 import englishKorean from "../words/englishKorean";
 import englishWords from "../words/englishWords";
 import getRandomInt from "./random";
+import words from "../pages/fetchWord";
 
-
-
-const Flashcard = () =>{
+const Flashcard = () => {
   const [num, setNum] = useState(getRandomInt());
+
   useEffect(() => {
     const r = getRandomInt();
-    setNum(r)},[]);
+    setNum(r);
+  }, []);
 
   return (
     <>
@@ -22,5 +23,5 @@ const Flashcard = () =>{
       </div>
     </>
   );
-}
+};
 export default Flashcard;

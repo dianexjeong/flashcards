@@ -1,4 +1,4 @@
-export const germanData = [
+const germanData = [
   {
     id: 0,
     word: "die Geschichte",
@@ -15,3 +15,5 @@ export const germanData = [
     def: "도배하다",
   },
 ];
+
+export default germanData;

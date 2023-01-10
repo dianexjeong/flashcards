@@ -1,4 +1,4 @@
-export const englishData = [
+const englishData = [
   {
     id: 0,
     word: "abandon",
@@ -15,3 +15,5 @@ export const englishData = [
     def: "다양한",
   },
 ];
+
+export default englishData;
