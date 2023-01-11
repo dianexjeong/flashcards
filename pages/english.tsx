@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import utilStyles from "../styles/utils.module.css";
 import Flashcard from "../components/Flashcard";
 import axios from "axios";
@@ -20,13 +21,16 @@ type word = {
 };
 
 const English = ({
-  airQuality,
+  airQ,
   wordData,
 }: {
+  airQ: string;
   airQuality: string;
   wordData: abc;
 }) => {
-  console.log(wordData);
+  const router = useRouter();
+  const data = router.query;
+  const airQuality = data.air;
   const words = wordData.englishWords;
   const [engWord, defWord] = fetchWord(words);
   return (
@@ -53,16 +57,11 @@ const fetchWord = (words: any) => {
 // };
 
 export async function getServerSideProps() {
-  const res = await axios.get(
-    `http://openAPI.seoul.go.kr:8088/${API_KEY}/json/RealtimeCityAir/1/5/동남권/서초구`
-  );
-  const airQuality = res.data.RealtimeCityAir.row[0].IDEX_NM;
-
-  const filePath = path.join(process.cwd(), "pages/api/english.json");
+  const filePath = path.join(process.cwd(), "pages/api/vocab.json");
   const jsonData = await fsPromises.readFile(filePath);
   const wordData = JSON.parse(jsonData.toString());
 
   return {
-    props: { airQuality, wordData },
+    props: { wordData },
   };
 }

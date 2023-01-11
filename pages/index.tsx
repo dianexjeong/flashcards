@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useState } from "react";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
@@ -7,6 +8,8 @@ import axios from "axios";
 const API_KEY = process.env.AIR_API_KEY;
 
 export default function Home({ airQuality }: { airQuality: string }) {
+  const [data, setData] = useState({ air: airQuality });
+
   return (
     <Layout home air={airQuality}>
       <Head>
@@ -16,7 +19,7 @@ export default function Home({ airQuality }: { airQuality: string }) {
         <Link href={`/deutsch`}>Deutsch Lernen</Link>
       </section>
       <section className={utilStyles.headingLg}>
-        <Link href={`/english`}>Learn English</Link>
+        <Link href={{ pathname: "/english", query: data }}>Learn English</Link>
       </section>
     </Layout>
   );

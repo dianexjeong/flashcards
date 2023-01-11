@@ -17,7 +17,7 @@ export default function Layout({
   children: React.ReactNode;
   home?: boolean;
   deutsch?: boolean;
-  air?: string;
+  air?: any;
 }) {
   var airClass: string = "";
   if (air === "좋음") {
