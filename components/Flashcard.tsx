@@ -11,7 +11,7 @@ const Flashcard = ({
 }) => {
   return (
     <>
-      <div className={styles.flipCard}>
+      <div className={styles.flipCard} tabIndex={-1}>
         <div className={styles.flipCardInner}>
           <div className={styles.flipCardFront}>
             {eng}
