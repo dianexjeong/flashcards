@@ -19,13 +19,18 @@ const Flashcard = ({
 
   return (
     <div className={styles.card}>
-      <div className={styles.flipCard} tabIndex={-1}>
+      <div className={styles.flipCard}>
         <div className={styles.flipCardInner} onClick={() => handleClick()}>
-          <div className={styles.flipCardFront}>
-            {eng}
-            {ger}
+          <div>
+            {isFlipped === true ? (
+              <div className={styles.flipCardFront}>
+                {eng}
+                {ger}
+              </div>
+            ) : (
+              <div className={styles.flipCardBack}>{kor}</div>
+            )}
           </div>
-          <div className={styles.flipCardBack}>{kor}</div>
         </div>
       </div>
     </div>

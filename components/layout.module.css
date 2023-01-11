@@ -47,7 +47,7 @@
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flipCard:focus .flipCardInner {
+.flipCardRotate {
   transform: rotateY(180deg);
 }
 
@@ -71,5 +71,13 @@
 .flipCardBack {
   background-color: #414180;
   color: white;
-  transform: rotateY(180deg);
+}
+
+@keyframes flipcard-rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
 }
