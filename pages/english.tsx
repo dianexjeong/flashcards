@@ -4,6 +4,7 @@ import Flashcard from "../components/Flashcard";
 import axios from "axios";
 import fsPromises from "fs/promises";
 import path from "path";
+import getRandomInt from "../components/random";
 
 const API_KEY = process.env.AIR_API_KEY;
 
@@ -17,24 +18,36 @@ type word = {
   def: string;
 };
 
-const English = ({ airQuality }: { airQuality: string }) => {
+const English = ({
+  airQuality,
+  wordData,
+}: {
+  airQuality: string;
+  wordData: abc;
+}) => {
+  console.log(wordData);
+  const words = wordData.englishWords;
+  const [engWord, defWord] = fetchWord(words);
   return (
     <Layout air={airQuality}>
       <h1 className={utilStyles.heading2Xl}>Let's study English!</h1>
-      <Flashcard eng="hi" kor="안녕" />
+      <Flashcard eng={engWord} kor={defWord} />
     </Layout>
   );
 };
 
 export default English;
 
-const fetchWord = ({ wordData }: { wordData: abc }) => {
-  console.log(wordData);
-  const words = wordData.englishWords;
-  return {
-    props: { words },
-  };
+const fetchWord = (words: any) => {
+  const num = getRandomInt();
+  const thisWord: string = words[num].word;
+  const thisDef: string = words[num].def;
+  return [thisWord, thisDef] as const;
 };
+
+// const getWord = ({ num, words }: { num: number; words: abc }) => {
+//   const engWord = words[num];
+// };
 
 export async function getServerSideProps() {
   const res = await axios.get(
