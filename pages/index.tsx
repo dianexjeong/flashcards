@@ -16,7 +16,7 @@ export default function Home({ airQuality }: { airQuality: string }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingLg}>
-        <Link href={`/deutsch`}>Deutsch Lernen</Link>
+        <Link href={{ pathname: "/deutsch", query: data }}>Deutsch lernen</Link>
       </section>
       <section className={utilStyles.headingLg}>
         <Link href={{ pathname: "/english", query: data }}>Learn English</Link>

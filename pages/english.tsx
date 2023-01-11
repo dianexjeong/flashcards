@@ -12,6 +12,7 @@ const API_KEY = process.env.AIR_API_KEY;
 
 type abc = {
   englishWords: word[];
+  germanWords: word[];
 };
 
 type word = {
@@ -51,10 +52,6 @@ const fetchWord = (words: any) => {
   const thisDef: string = words[num].def;
   return [thisWord, thisDef] as const;
 };
-
-// const getWord = ({ num, words }: { num: number; words: abc }) => {
-//   const engWord = words[num];
-// };
 
 export async function getServerSideProps() {
   const filePath = path.join(process.cwd(), "pages/api/vocab.json");
