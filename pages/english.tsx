@@ -1,4 +1,5 @@
 import Layout from "../components/layout";
+import { useState, useEffect } from "react";
 import utilStyles from "../styles/utils.module.css";
 import Flashcard from "../components/Flashcard";
 import axios from "axios";
@@ -39,7 +40,9 @@ const English = ({
 export default English;
 
 const fetchWord = (words: any) => {
-  const num = getRandomInt();
+  const [num, setNum] = useState<number>(0);
+  const randNum = getRandomInt();
+  useEffect(() => setNum(randNum), []);
   const thisWord: string = words[num].word;
   const thisDef: string = words[num].def;
   return [thisWord, thisDef] as const;
