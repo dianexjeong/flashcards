@@ -15,7 +15,6 @@ const Flashcard = ({
 
   const handleClick = () => {
     setFlip((current: boolean) => !current);
-    console.log(flip);
   };
 
   return (

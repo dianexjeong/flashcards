@@ -32,7 +32,6 @@ const Deutsch = ({
   const router = useRouter();
   const data = router.query;
   const airQuality = data.air;
-  console.log(airQuality);
   const words = wordData.germanWords;
   const [gerWord, defWord] = fetchWord(words);
   return (
