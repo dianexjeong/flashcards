@@ -1,4 +1,5 @@
 import styles from "./layout.module.css";
+import { useState } from "react";
 
 const Flashcard = ({
   ger,
@@ -9,10 +10,17 @@ const Flashcard = ({
   eng?: string;
   kor: string;
 }) => {
+  const [isFlipped, setIsFlipped] = useState(true);
+
+  const handleClick = () => {
+    setIsFlipped((current: boolean) => !current);
+    console.log(isFlipped);
+  };
+
   return (
-    <>
+    <div className={styles.card}>
       <div className={styles.flipCard} tabIndex={-1}>
-        <div className={styles.flipCardInner}>
+        <div className={styles.flipCardInner} onClick={() => handleClick()}>
           <div className={styles.flipCardFront}>
             {eng}
             {ger}
@@ -20,7 +28,7 @@ const Flashcard = ({
           <div className={styles.flipCardBack}>{kor}</div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Flashcard;
