@@ -6,7 +6,7 @@ import Flashcard from "../components/Flashcard";
 import axios from "axios";
 import fsPromises from "fs/promises";
 import path from "path";
-import getRandomInt from "../components/random";
+import getRandomInt from "../components/Random";
 
 const API_KEY = process.env.AIR_API_KEY;
 
