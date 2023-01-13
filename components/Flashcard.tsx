@@ -1,4 +1,4 @@
-import styles from "./layout.module.css";
+import flipStyles from "../styles/Flashcard.module.css";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 
@@ -19,20 +19,26 @@ const Flashcard = ({
 
   return (
     <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
-      <div className={styles.card}>
-        <div className={styles.flipCard}>
-          <div className={styles.flipCardInner} onClick={() => handleClick()}>
-            <div className={styles.flipCardFront}>
+      <div className={flipStyles.card}>
+        <div className={flipStyles.flipCard}>
+          <div
+            className={flipStyles.flipCardInner}
+            onClick={() => handleClick()}
+          >
+            <div className={flipStyles.flipCardFront}>
               {eng}
               {ger}
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.card}>
-        <div className={styles.flipCard}>
-          <div className={styles.flipCardInner} onClick={() => handleClick()}>
-            <div className={styles.flipCardBack}>{kor}</div>
+      <div className={flipStyles.card}>
+        <div className={flipStyles.flipCard}>
+          <div
+            className={flipStyles.flipCardInner}
+            onClick={() => handleClick()}
+          >
+            <div className={flipStyles.flipCardBack}>{kor}</div>
           </div>
         </div>
       </div>

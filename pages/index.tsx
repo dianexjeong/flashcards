@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
-import Layout, { siteTitle } from "../components/layout";
+import Layout, { siteTitle } from "../components/Layout";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import axios from "axios";
@@ -15,12 +15,19 @@ export default function Home({ airQuality }: { airQuality: string }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingLg}>
-        <Link href={{ pathname: "/deutsch", query: data }}>Deutsch lernen</Link>
-      </section>
-      <section className={utilStyles.headingLg}>
-        <Link href={{ pathname: "/english", query: data }}>Learn English</Link>
-      </section>
+      <div className={utilStyles.pageLink}>
+        {" "}
+        <section className={utilStyles.headingLg}>
+          <Link href={{ pathname: "/deutsch", query: data }}>
+            Deutsch lernen
+          </Link>
+        </section>
+        <section className={utilStyles.headingLg}>
+          <Link href={{ pathname: "/english", query: data }}>
+            Learn English
+          </Link>
+        </section>
+      </div>
     </Layout>
   );
 }
